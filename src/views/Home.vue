@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <div class="logo mr-2"></div>
+    <nav class="navbar navbar-expand-lg navbar-light mb-4">
+      <span class="navbar-brand d-flex align-items-center" >
+        <span class="logo mr-2"></span>
         <span>ToDoList</span>
-      </a>
+      </span>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <router-link class="nav-link" to="add">代办事项</router-link>
