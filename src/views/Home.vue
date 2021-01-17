@@ -5,7 +5,7 @@
         <span class="logo mr-2"></span>
         <span>ToDoList</span>
       </span>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
           <router-link class="nav-link" to="add">代办事项</router-link>
         </li>

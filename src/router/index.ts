@@ -1,21 +1,35 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
-import Add from '@/components/Add.vue'
-import Edit from '@/components/Edit.vue'
-import Delete from '@/components/Delete.vue'
-import Done from '@/components/Done.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: import('@/views/Home.vue'),
     children: [
       { path: '', redirect: { name: 'add' } },
-      { path: '/add', name: 'add', component: Add },
-      { path: '/edit', name: 'edit', component: Edit },
-      { path: '/delete', name: 'delete', component: Delete },
-      { path: '/done', name: 'done', component: Done }
+      { path: '/add', name: 'add', component: import('@/components/Add.vue') },
+      {
+        path: '/edit',
+        name: 'edit',
+        component: import('@/components/Edit.vue'),
+        beforeEnter: (to, from, next) => {
+          if (from.path === '/add') {
+            next()
+          } else {
+            next('/add')
+          }
+        }
+      },
+      {
+        path: '/delete',
+        name: 'delete',
+        component: import('@/components/Delete.vue')
+      },
+      {
+        path: '/done',
+        name: 'done',
+        component: import('@/components/Done.vue')
+      }
     ]
   }
 ]
